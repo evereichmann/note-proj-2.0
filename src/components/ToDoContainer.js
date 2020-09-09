@@ -4,11 +4,12 @@ import ToDo from './ToDo'
 
 export default class ToDoContainer extends Component {
     render() {
+        // console.log(this.props)
         return(
             <div>
                 <h3>To Dos</h3>
-                {this.props.todos.map(todo => {
-                        return <ToDo todo={todo}/>
+                {this.props.users.map(user => {
+                        return <ToDo user={user}/>
                     })}
         </div>
         )

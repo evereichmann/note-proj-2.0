@@ -4,15 +4,13 @@ import { Container } from 'semantic-ui-react'
 export default class ToDo extends Component {
     render() {
         // console.log(this.props)
-        const { title, content, urgent } = this.props.todo
+
         return (
-                <div>
-                    <Container id="container">
-                    <h4>{title}</h4>
-                    <p>{content}</p>
-                    <p>{urgent}</p>
-                    </Container>
-                </div>
+            <div key={this.props.user.id}>
+                <Container id="container">
+                <h6>to dos somehow</h6>
+                </Container>
+            </div>
         )
     }
 }
