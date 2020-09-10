@@ -3,6 +3,7 @@ import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css'
 import { Container  } from 'semantic-ui-react';
 
+
 export default class Calander extends Component {
     state = {
         date: new Date(),
@@ -16,6 +17,7 @@ export default class Calander extends Component {
             <div>
             <Container id="container">
             <Calendar
+            id="calender"
             onChange={this.onChange}
             value={ value }
             />
