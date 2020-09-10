@@ -26,6 +26,7 @@ function Login(props) {
         if (data.error) {
             setError(data.error)
         } else {
+          localStorage.setItem('myAppToken', data.token)
           props.loginSuccess(data)
           props.history.push('/home')
         }

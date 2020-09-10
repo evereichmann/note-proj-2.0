@@ -3,8 +3,19 @@
   height: 30px;
   width: 30px;
 }
-/* 
-#container {
-  border-color: aqua;
+
+#container-card {
+  border-color: grey;
   border-style: solid;
-} */
+  border-radius: 5px;
+  border-width: 1px;
+  margin: 5px;
+}
+
+#button{
+  margin: 5px
+}
+
+#card-font{
+  margin: 5px
+}

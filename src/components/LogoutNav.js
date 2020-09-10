@@ -6,10 +6,6 @@ import { logoutSuccess } from '../action/auth'
 
 class LogoutNav extends React.Component {
 
-    // handleLogout = () => {
-    //     this.props.logoutSuccess
-    //   }
-
 render(){
     return(
         <Menu>
