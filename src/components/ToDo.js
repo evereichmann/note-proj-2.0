@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Container, Button} from 'semantic-ui-react'
+import { Container, Button, Icon} from 'semantic-ui-react'
 import { deleteNote } from '../action/index'
 import { connect } from 'react-redux'
 
@@ -26,7 +26,9 @@ class ToDo extends Component {
             <h4 id="card-font">{title}</h4>
             <p id="card-font">{content}</p>
             <p id="card-font">{urgent}</p>
-            <Button id="button" onClick={() => this.deleteNote(this.props.todo.id)}>X</Button>
+            { urgent ? <Icon id="card-font" name='flag' color='red' /> : <Icon id="card-font" name='flag outline' color='red' />}
+            <Button floated='right' id="button" onClick={() => this.deleteNote(this.props.todo.id)}>X</Button>
+            <Button floated='right' id="button" >Edit</Button>
         </Container>
       </div>
     )
