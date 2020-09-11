@@ -7,8 +7,7 @@ export default function auth(state=null, action) {
       case 'POST_NEW_NOTE':
           return  {...state, to_dos: [...state.to_dos, action.todo ]}
       case 'DELETE_NOTE':  
-        const deleteNote = state.filter(t => t.id !== action.id)
-        return deleteNote    
+        return {...state, to_dos: [...state.to_dos.filter(t => t.id !== action.id )]}    
       default:
         return state
     }
