@@ -6,16 +6,10 @@ export const fetchUsersSuccess = (users) => {
   }
 }
 
-export const fetchNotesSuccess = (notes) => {
-  return{
-    type: 'FETCH_NOTES_SUCCESS',
-    notes: notes
-  }
-}
-export const postNewNote = (notes) => {
+export const postNewNote = (todo) => {
   return{
     type: 'POST_NEW_NOTE',
-    notes: notes
+    todo: todo
   }
 }
 

@@ -16,25 +16,17 @@ class ToDo extends Component {
         this.props.deleteNote(id)
       })
   }
-  
-  renderToDo = () => {
-    return this.props.notes.map(note => {
-      return (<h4>{note.title}</h4>)
-    })
-  }
-
 
   render () {
-    console.log(this.props.notes)
-    // const {title, content, urgent } = this.props.notes
+    // console.log(this.props.notes)
+    const {title, content, urgent } = this.props.todo
     return (
       <div>
         <Container id='container-card'>         
-            {/* <h4 id="card-font">{this.props.notes.title}</h4>
+            <h4 id="card-font">{title}</h4>
             <p id="card-font">{content}</p>
-            <p id="card-font">{urgent}</p> */}
-            {/* <Button id="button" onClick={() => this.deleteNote(this.props.todo.id)}>X</Button> */}
-          { this.renderToDo() }
+            <p id="card-font">{urgent}</p>
+            <Button id="button" onClick={() => this.deleteNote(this.props.todo.id)}>X</Button>
         </Container>
       </div>
     )

@@ -34,7 +34,7 @@ function NewNote(props) {
           })
     // console.log(data)
     }
-    console.log(props.auth)
+    // console.log(props.auth)
         return (
             <div>
                 <Container>
@@ -70,8 +70,7 @@ function NewNote(props) {
  
 const mapStateToProps = (state) => {
     return {
-      auth: state.auth,
-      notes: state.notes
+      auth: state.auth
     }
   }
   

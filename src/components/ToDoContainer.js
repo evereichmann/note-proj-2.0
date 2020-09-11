@@ -1,32 +1,25 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import ToDo from './ToDo'
-import {fetchNotesSuccess} from '../action/index'
 
 
 class ToDoContainer extends React.Component {
-  state = {
-    notes: []
-  }
 
-  componentDidMount() {
+  
+  renderToDo = () => {
     if(!this.props.auth){
-      return 
+      return <h4>create an account to make notes</h4>
     }else{
-
-      fetch('http://localhost:3000/users/'+this.props.auth.id)
-        .then(resp => resp.json())
-        .then(data => {
-          this.props.fetchNotesSuccess(data.to_dos)
-        })
+      {return this.props.auth.to_dos.map(todo => {
+          return <ToDo key={todo.id} todo={todo}/>
+      })}
     }
   }
-
 
   render () {
     return (
       <div>
-        {this.props.auth? <ToDo /> : <h4>create an account to make notes</h4>}
+        <this.renderToDo />
       </div>
     )
   }
@@ -34,13 +27,8 @@ class ToDoContainer extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-      auth: state.auth,
-      notes: state.notes
+      auth: state.auth
     }
   }
-
-  const mapDispatchToProps = {
-    fetchNotesSuccess
-  }
   
-  export default connect(mapStateToProps, mapDispatchToProps)(ToDoContainer)
+  export default connect(mapStateToProps, null)(ToDoContainer)
