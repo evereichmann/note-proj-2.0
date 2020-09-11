@@ -1,19 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import ToDo from './ToDo'
-import {fetchNotesSuccess} from '../action/index'
 
 
 class ToDoContainer extends React.Component {
-  
-  componentDidMount() {
-    fetch('http://localhost:3000/to_dos')
-      .then(resp => resp.json())
-      .then(data => {
-        this.props.fetchNotesSuccess(data)
 
-      })
-  }
   
   renderToDo = () => {
     if(!this.props.auth){
@@ -36,13 +27,8 @@ class ToDoContainer extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-      auth: state.auth,
-      notes: state.notes
+      auth: state.auth
     }
   }
-
-  const mapDispatchToProps = {
-    fetchNotesSuccess
-  }
   
-  export default connect(mapStateToProps, mapDispatchToProps)(ToDoContainer)
+  export default connect(mapStateToProps, null)(ToDoContainer)

@@ -8,7 +8,7 @@ function NavBar(props) {
         return (
             <div>
                 <Container id="container">
-                    <h1>WEBSITE TITLE</h1>
+                    <h1>Notester</h1>
                     {props.auth ? <LogoutNav /> : <LoginNav />}
                 </Container>
             </div>
