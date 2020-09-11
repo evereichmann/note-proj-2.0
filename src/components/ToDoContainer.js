@@ -5,30 +5,28 @@ import {fetchNotesSuccess} from '../action/index'
 
 
 class ToDoContainer extends React.Component {
-  
-  componentDidMount() {
-    fetch('http://localhost:3000/to_dos')
-      .then(resp => resp.json())
-      .then(data => {
-        this.props.fetchNotesSuccess(data)
-
-      })
+  state = {
+    notes: []
   }
-  
-  renderToDo = () => {
+
+  componentDidMount() {
     if(!this.props.auth){
-      return <h4>create an account to make notes</h4>
+      return 
     }else{
-      {return this.props.auth.to_dos.map(todo => {
-          return <ToDo key={todo.id} todo={todo}/>
-      })}
+
+      fetch('http://localhost:3000/users/'+this.props.auth.id)
+        .then(resp => resp.json())
+        .then(data => {
+          this.props.fetchNotesSuccess(data.to_dos)
+        })
     }
   }
+
 
   render () {
     return (
       <div>
-        <this.renderToDo />
+        {this.props.auth? <ToDo /> : <h4>create an account to make notes</h4>}
       </div>
     )
   }

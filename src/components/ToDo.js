@@ -16,25 +16,40 @@ class ToDo extends Component {
         this.props.deleteNote(id)
       })
   }
+  
+  renderToDo = () => {
+    return this.props.notes.map(note => {
+      return (<h4>{note.title}</h4>)
+    })
+  }
+
 
   render () {
-    // console.log(this.props.note)
-    const {title, content, urgent } = this.props.todo
+    console.log(this.props.notes)
+    // const {title, content, urgent } = this.props.notes
     return (
       <div>
-        <Container id='container-card'>
-            <h4 id="card-font">{title}</h4>
+        <Container id='container-card'>         
+            {/* <h4 id="card-font">{this.props.notes.title}</h4>
             <p id="card-font">{content}</p>
-            <p id="card-font">{urgent}</p>
-            <Button id="button" onClick={() => this.deleteNote(this.props.todo.id)}>X</Button>
+            <p id="card-font">{urgent}</p> */}
+            {/* <Button id="button" onClick={() => this.deleteNote(this.props.todo.id)}>X</Button> */}
+          { this.renderToDo() }
         </Container>
       </div>
     )
   }
 }
 
+const mapStateToProps = (state) => {
+  return {
+    notes: state.notes
+  }
+}
+
+
 const mapDispatchToProps = {
   deleteNote
 }
 
-export default connect(null, mapDispatchToProps)(ToDo)
+export default connect(mapStateToProps, mapDispatchToProps)(ToDo)
