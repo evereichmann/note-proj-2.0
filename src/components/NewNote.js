@@ -21,8 +21,8 @@ function NewNote(props) {
             })
           }
       
-          fetch('http://localhost:3000/to_dos', reqObj)
-          // fetch('https://noteprojectbackend.herokuapp.com/to_dos', reqObj)
+          // fetch('http://localhost:3000/to_dos', reqObj)
+          fetch('https://noteprojectbackend.herokuapp.com/to_dos', reqObj)
           .then(resp => resp.json())
           .then(data => {
               props.postNewNote(data)

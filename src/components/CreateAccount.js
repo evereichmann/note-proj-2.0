@@ -20,17 +20,17 @@ function Login (props) {
     body: JSON.stringify({'user': data })
   }
 
-  fetch('http://localhost:3000/users', reqObj)
+  fetch('https://noteprojectbackend.herokuapp.com/users', reqObj)
   .then(resp => resp.json())
   .then(data => {
-    // if (data.error) {
-    //     setError(data.error)
-    // } else {
+    if (data.error) {
+        setError(data.error)
+    } else {
     //   // localStorage.setItem('myAppToken', data.token)
       props.loginSuccess(data)
       props.history.push('/home')
-    // }
-    console.log(data)
+    }
+    // console.log(data)
   })
 }
 

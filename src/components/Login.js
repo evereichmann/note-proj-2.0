@@ -20,8 +20,8 @@ function Login(props) {
         body: JSON.stringify(data)
       }
       
-      fetch('http://localhost:3000/api/v1/auth', reqObj)
-      // fetch('https://noteprojectbackend.herokuapp.com/api/v1/auth', reqObj)
+      // fetch('http://localhost:3000/api/v1/auth', reqObj)
+      fetch('https://noteprojectbackend.herokuapp.com/api/v1/auth', reqObj)
       .then(resp => resp.json())
       .then(data => {
         if (data.error) {
