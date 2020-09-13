@@ -27,8 +27,8 @@ function Login (props) {
     //     setError(data.error)
     // } else {
     //   // localStorage.setItem('myAppToken', data.token)
-      // props.loginSuccess(data)
-    //   props.history.push('/home')
+      props.loginSuccess(data)
+      props.history.push('/home')
     // }
     console.log(data)
   })
