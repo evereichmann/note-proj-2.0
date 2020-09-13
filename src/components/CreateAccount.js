@@ -1,11 +1,39 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { useForm } from 'react-hook-form'
 import { RHFInput } from 'react-hook-form-input'
 import { Button, Form, Container } from 'semantic-ui-react'
+import { loginSuccess } from '../action/auth'
+import { connect } from 'react-redux'
 
-export default function Login () {
+function Login (props) {
+
+  const [error, setError] = useState(null)
+
   const { handleSubmit, register, setValue, errors } = useForm()
-  const onSubmit = data => console.log(data)
+  const onSubmit = data => {
+  console.log(data)
+  const reqObj = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({'user': data })
+  }
+
+  fetch('https://noteprojectbackend.herokuapp.com/users', reqObj)
+  .then(resp => resp.json())
+  .then(data => {
+    if (data.error) {
+        setError(data.error)
+    } else {
+    //   // localStorage.setItem('myAppToken', data.token)
+      props.loginSuccess(data)
+      props.history.push('/home')
+    }
+    // console.log(data)
+  })
+}
+
 
   return (
     <div>
@@ -45,7 +73,7 @@ export default function Login () {
             <RHFInput
               as={<Form.Input />}
               type='text'
-              name='password_digest'
+              name='password'
               placeholder='password'
               register={register({ required: true, maxLength: 15, minLength: 5 })}
               setValue={setValue}
@@ -58,3 +86,10 @@ export default function Login () {
     </div>
   )
 }
+
+
+const mapDispatchToProps = {
+  loginSuccess
+}
+
+export default connect(null, mapDispatchToProps)(Login)

@@ -10,7 +10,9 @@ class ToDo extends Component {
       headers: {
         'Content-Type' : 'application/json'}
     }
-    fetch('http://localhost:3000/to_dos/'+id, reqObj )
+
+    // fetch('http://localhost:3000/to_dos/'+id, reqObj )
+    fetch('https://noteprojectbackend.herokuapp.com/to_dos/'+id, reqObj )
       .then(resp => resp.json())
       .then(data => {
         this.props.deleteNote(id)
