@@ -22,19 +22,13 @@ function NewNote(props) {
           }
       
           fetch('http://localhost:3000/to_dos', reqObj)
+          // fetch('https://noteprojectbackend.herokuapp.com/to_dos', reqObj)
           .then(resp => resp.json())
           .then(data => {
-            // if (data.error) {
-            //     setError(data.error)
-            // } else {
               props.postNewNote(data)
               props.history.push('/home')
-
-            // }
           })
-    // console.log(data)
     }
-    // console.log(props.auth)
         return (
             <div>
                 <Container>

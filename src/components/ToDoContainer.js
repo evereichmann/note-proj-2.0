@@ -9,6 +9,8 @@ class ToDoContainer extends React.Component {
   renderToDo = () => {
     if(!this.props.auth){
       return <h4>create an account to make notes</h4>
+    }else if(this.props.auth.to_dos == null){
+      return <h4>create a note</h4>
     }else{
       {return this.props.auth.to_dos.map(todo => {
           return <ToDo key={todo.id} todo={todo}/>
