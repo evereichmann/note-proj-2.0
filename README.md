@@ -13,7 +13,7 @@ This is a to do/ note application. This application uses React/Redux/HTML/CSS/Ja
 <ul>
 
 
-[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+### [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ### `yarn test`
 
