@@ -10,10 +10,9 @@ This is a to do/ note application. This application uses React/Redux/HTML/CSS/Ja
   <li>react-hook-form</li>
   <li>react-hook-form-input</li>
   <li>semantic-ui-react</li>
-<ul>
+</ul>
 
 
-### [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ### `yarn test`
 
