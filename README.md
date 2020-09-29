@@ -1,16 +1,16 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## About
 
-## Available Scripts
+This is a to do/ note application. This application uses React/Redux/HTML/CSS/JavaScript.
 
-In the project directory, you can run:
+### NPM Packages 
 
-### `yarn start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+<ul>
+  <li>react-calendar</li>
+  <li>react-digital-clock</li>
+  <li>react-hook-form</li>
+  <li>react-hook-form-input</li>
+  <li>semantic-ui-react</li>
+<ul>
 
 ### `yarn test`
 
@@ -61,9 +61,6 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/ad
 
 ### Deployment
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+https://lit-depths-47200.herokuapp.com/ 
 
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 # note-proj-2.0
