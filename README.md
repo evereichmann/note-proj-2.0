@@ -12,6 +12,10 @@ This is a to do/ note application. This application uses React/Redux/HTML/CSS/Ja
   <li>semantic-ui-react</li>
 <ul>
 
+
+[![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
+
+
 ### `yarn test`
 
 Launches the test runner in the interactive watch mode.<br />
